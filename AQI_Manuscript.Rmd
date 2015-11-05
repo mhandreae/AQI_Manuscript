@@ -17,27 +17,25 @@ fontsize: 12pt
 bibliography: Bibliography/AQI_bibliography6May2015.bib
 ---
 
-\begin{center}
+\setlength{\parindent}{0ex}
 
-\vspace{240pt}
+# Authors
 
-Michael Andreae, MD
+Michael H. Andreae, MD, 
 
-\vspace{40pt}
+Department of Anesthesiology, Montefiore Medical Center, Albert Einstein College of Medicine
 
-Term Project for Independent Study QMSS G4998
+Charles Hall, PhD, 
 
-\vspace{80pt}
- 
-Columbia University
+Department of Department of Epidemiology & Population Health, Albert Einstein College of Medicine
 
-Graduate School of Arts and Sciences
+# Corresponding author:
 
-Quantitative Methods in the Social Sciences
+Michael Andreae, MD, Email: mandreae@montefiore.org, Tel: +1 (718)920 2802, Address: Department of Anesthesiology, Montefiore Medical Center, 111 E 210th Street, Bronx, NY 10467, USA
 
-May 2015
+# Acknowledgement
 
-\end{center}
+This research is supported in part by the National Center for Advancing Translational Sciences (NCATS), a component of the National Institutes of Health (NIH), through CTSA grant numbers 5KL2TR001071-03 and UL1 TR001073. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the NIH.
 
 \pagebreak
 
@@ -310,12 +308,6 @@ We hope to convince anesthesiologists with the presented strong and consistent a
 
 Our analysis of the association between insurance status (as a marker of patient socioecomonic status) and antiemetic administration (as a marker of anesthesia quality provided by the individual anesthesiologist) point to possible unappreciated healthcare disparities in anesthesia at the provider level which are worrisome and deserve further investigation and vigorous countermeasures.
 
-
-\newpage
-
-# Acknowledgement
-
-This research is supported in part the National Center for Advancing Translational Sciences (NCATS), a component of the National Institutes of Health (NIH), through CTSA grant numbers UL1TR000086, TL1RR000087, and KL2TR000088. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the NIH.
 
 \newpage
 
