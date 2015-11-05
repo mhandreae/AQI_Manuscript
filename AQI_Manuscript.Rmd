@@ -2,7 +2,7 @@
 title: \normalsize Utilization of Antiemetic Medication as a Marker of Healthcare
   Disparities in Anesthesia \newline A Bayesian Hierarchical Model Using the National
   Anesthesia Clinical Outcomes Registry
-csl: Bibliography/anesthesia-and-analgesia.csl
+csl: Bibliography/anesthesiology.csl
 fontfamily: pslatex
 output:
   pdf_document:
@@ -21,13 +21,11 @@ bibliography: Bibliography/AQI_bibliography6May2015.bib
 
 # Authors
 
-Michael H. Andreae, MD, 
+Michael H. Andreae, MD, Department of Anesthesiology, Montefiore Medical Center, Albert Einstein College of Medicine, Bronx, NY
 
-Department of Anesthesiology, Montefiore Medical Center, Albert Einstein College of Medicine
+Robert S White, MD, Department of Anesthesiology, Weill Cornell Medical Center, New York, NY
 
-Charles Hall, PhD, 
-
-Department of Department of Epidemiology & Population Health, Albert Einstein College of Medicine
+Charles Hall, PhD, Department of Epidemiology & Population Health, Albert Einstein College of Medicine, Bronx, NY
 
 # Corresponding author:
 
@@ -37,7 +35,7 @@ Michael Andreae, MD, Email: mandreae@montefiore.org, Tel: +1 (718)920 2802, Addr
 
 This research is supported in part by the National Center for Advancing Translational Sciences (NCATS), a component of the National Institutes of Health (NIH), through CTSA grant numbers 5KL2TR001071-03 and UL1 TR001073. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the NIH.
 
-**Number of words in Abstract (250), in Introduction, and in Discussion**
+**Number of words in Abstract (250), in Introduction (500), and in Discussion (1,500)**
 
 \pagebreak
 
@@ -58,7 +56,7 @@ eval_everything=FALSE
 \setcounter{secnumdepth}{2}
 \setlength{\parindent}{10ex}
 
-# Introduction
+# Introduction (500 word limit)
 
 ## Healthcare disparities in the United States
 The healthcare disparities in the United States of America described decades ago by Gornick[@Gornick_8703185], unabatedly persist to the present[@Schoen_24226092] and are linked to social determinants of health and equality[@Cooper_22566148]. Health inequality is worse in the US than abroad [@Schoen_24226092]. Strikingly, life expectancy for African Americans is almost 4 years shorter compared to the Caucasian American population[@Kochanek_24152376]. The medical profession cannot and will not accept this grave inequality which contradicts basic principles of medical ethics[@IOM_2003]. Poverty, poor education, differences in medical insurance coverage, geographic location, legal or social status, race & gender, patient and community attitudes & perceptions and, last but not least, provider bias might lead to healthcare disparities also in anesthesia[@Silber_23719571]. This paper investigates if antiemetic utilization as a marker of high quality anesthesia care is predicted by medical insurance status in the large National Anesthesia Clinical Outcomes Registry (NACOR)[@Dutton_21871404]. 
@@ -253,7 +251,7 @@ The convergence of our Bayesian model was confirmed by looking at traceplots and
 
 The strong and statistically significant association (p < 0.001) between insurance status and the odds of receiving antiemetic prophylaxis remained unchanged after stratification to control for patient characteristics like gender and age. Our inferences were invariant to the statistical approach (Bayesian versus classical frequentist analysis) we used and bore out in the subset with data for multivariate logistic regression as well as in stratified analysis.  
 
-# Discussion
+# Discussion (1,500 word limit)
 
 ## Summary of the findings
 
@@ -367,113 +365,23 @@ Having medicaid versus commerical insurance reduces the odds of receiving anti-e
 
 # Appendix
 
-## Bayesian Model Code
-
-~~~~~~~
-
-functions {
-  
-  /** 
-   * Transform standard normal to cauchy(location, scale).
-   *
-   * @param location Location parameter for Cauchy distribution
-   * @param scale Scale parameter for Cauchy distribution
-   * @param noise Standard normal variable (as declared in parameters block)
-   */
-  real cauchy_trans_lp(real location, real scale, real noise) {
-    noise ~ normal(0,1) ;
-    return location + scale * tan(pi() * (Phi_approx(noise) - 0.5)) ;
-  }
-  
-  /** 
-   * Transform standard normal to normal(location, scale).
-   *
-   * @param location Location parameter for normal distribution
-   * @param scale Scale parameter for normal distribution
-   * @param noise Standard normal variable (as declared in parameters block)
-   */
-  real normal_trans_lp(real location, real scale, real noise) {
-    noise ~ normal(0,1) ;
-    return location + scale * noise ;
-  }
-  
-  /** 
-   * Transform vector of standard normals to vector of normals
-   * with same location (mean) and scale (sd).
-   *
-   * @param location Location for normal distributions
-   * @param scale Scale for normal distributions
-   * @param noise Name of vector of standard normals (as declared in parameters block)
-   */
-  vector normal_trans_vec_lp(real location, real scale, vector noise) {
-    noise ~ normal(0,1) ;
-    return location + scale * noise ;
-  } 
-}
-
-data {
-  // dimensions of data
-  int<lower=1>                  nOb ;     // number of cases
-  int<lower=1,upper=nOb>        nGrp ;    // number of facilities
-  int<lower=1>                  nX ;      // number of predictors
-  
-  // data 
-  int<lower=0,upper=1>          y[nOb] ;   // outcome (antiemetic administration) 
-  int<lower=1,upper=nGrp>       g[nOb] ;   // map obs --> groups (cases --> facilities)
-  row_vector[nX]                x[nOb] ;   // predictors (dummies for insurances status)
-
-  // locations and scales for priors
-  real                          beta_loc ;        // beta = fixed effects for predictors
-  real                          sigma_gamma_loc ; // sigma_gamma = scale for gamma
-  real                          gamma_loc ;       // gamma = random effects for groups
-  real<lower=0>                 beta_scale ;
-  real<lower=0>                 sigma_gamma_scale ;
-}
-
-parameters {
-  vector[nX]        beta_noise ;    
-  real<lower=0>     sigma_gamma_noise ;   
-  vector[nGrp]      gamma_noise ;   
-}
-
-transformed parameters {
-  vector[nX]        beta ;          // fixed effects for predictors
-  real<lower=0>     sigma_gamma ;   // variability (for gammas)
-  vector[nGrp]      gamma ;         // random effects for groups
-  
-  beta        <- normal_trans_vec_lp(beta_loc, beta_scale, beta_noise) ;
-  sigma_gamma <- cauchy_trans_lp(sigma_gamma_loc, sigma_gamma_scale, sigma_gamma_noise) ;
-  gamma       <- normal_trans_vec_lp(gamma_loc, sigma_gamma, gamma_noise) ;
-
-  /* 
-  Priors implied by transformations:
-      beta[i] ~ normal(beta_loc, beta_scale)
-      sigma_gamma ~ half-cauchy(sigma_gamma_loc, sigma_gamma_scale)
-      gamma[j] ~ normal(gamma_loc, sigma_gamma) 
-  */
-}
-
-model {
-  vector[nOb] mu_logit ; // linear predictor
-
-  for(n in 1:nOb) 
-    mu_logit[n] <- gamma[g[n]] + x[n]*beta ;
-  
-  y ~ bernoulli_logit(mu_logit) ; // vectorized 
-}
-
-/*
-generated quantities {
-  int y_rep[nOb] ;  // replicated data for posterior predictive checking
-  
-  for (n in 1:nOb)
-    y_rep[n] <- bernoulli_rng(inv_logit(gamma[g[n]] + x[n]*beta)) ;
-}
-*/
-
-~~~~~~~
 
 \setlength{\parindent}{0ex}
 
+\newpage
+
+# Figure Legends
+
+\newpage
+
+# Figures
+
+\newpage
+
+# Supplemental Digital Content
+
+## Bayesian Model Code
+
+\newpage
 
 # References
