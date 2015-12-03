@@ -26,6 +26,11 @@ save(ccAQI_cpt, myAQI_cpt,
 rm(list=ls())
 ```
 
+```{r, Libraries}
+library(knitr)
+library(dplyr)
+```
+
 ```{r, loadData}
 load("Data/ManuscriptData3Dec2015.Rdata")
 str(ccAQI_cpt)
@@ -33,4 +38,37 @@ str(ccAQI_cpt)
 
 # Build Tables
 
-## Table 1
+## Table 1 Population characteristics
+
+Table 1 Population characteristics describes the subpopulation in the NACOR database with information on antiemetic administration. We found statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
+
+```{r, Table1}
+attach(myAQI_cpt)
+
+Variables <- c("n",               # all
+               levels(sex), # gender
+               "median [IQR)",
+               levels(age_group), 
+               levels(pay),
+                "income",levels(incomeQ))
+
+
+Total <- c(dim(myAQI_cpt)[1], 
+           table(sex),
+           median(age, na.rm=TRUE),
+           table(age_group),
+           table(pay),
+           seq(1, length(Variables)-14))
+
+Groups <- c(
+  c("Population", "Gender", ""),
+  c("Age", rep("",6)),
+  c("Insurance", rep("",3)),
+  c("Income", rep("",4))
+            )
+
+Table1 <- data.frame(Groups=Groups, Variables=Variables, Total=Total)
+
+kable(Table1)
+
+```
