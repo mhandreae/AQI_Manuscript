@@ -38,33 +38,36 @@ str(ccAQI_cpt)
 
 # Build Tables
 
+\newpage
+
 ## Table 1 Population characteristics
 
-Table 1 Population characteristics describes the subpopulation in the NACOR database with information on antiemetic administration. We found statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
 
 ```{r, Table1}
 attach(myAQI_cpt)
 
 Variables <- c("n",               # all
                levels(sex), # gender
-               "median [IQR)",
+               "median [IQR]",
                levels(age_group), 
                levels(pay),
-                "income",levels(incomeQ))
+                "median [IQR]",levels(incomeQ))
 
 
-Total <- c(dim(myAQI_cpt)[1], 
+Total <- as.integer(c(dim(myAQI_cpt)[1], 
            table(sex),
            median(age, na.rm=TRUE),
            table(age_group),
            table(pay),
-           seq(1, length(Variables)-14))
+           median(income, na.rm = TRUE)*100000,
+           table(incomeQ)
+           ))
 
 Groups <- c(
   c("Population", "Gender", ""),
   c("Age", rep("",6)),
   c("Insurance", rep("",3)),
-  c("Income", rep("",4))
+  c("Income ($)", "-quartiles", rep("",3))
             )
 
 Table1 <- data.frame(Groups=Groups, Variables=Variables, Total=Total)
@@ -72,3 +75,46 @@ Table1 <- data.frame(Groups=Groups, Variables=Variables, Total=Total)
 kable(Table1)
 
 ```
+
+Table 1 Population characteristics describes the subpopulation in the NACOR database with information on antiemetic administration. We found statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
+
+### Table by hand
+
+|     |      |   |
+|-----|------|---|
+| all | 3442 |   |
+| age | 4556 |   |
+
+|     |      |   |
+|-----|------|---|
+|Population | n | 441645 |
+|------------------|
+|Gender | female | 249909 |
+| | male | 191654 |
+||||
+| Age | median | `r median(age, na.rm=TRUE)` |
+
+
+```{r}
+
+medInc <- median(myAQI_cpt$age, na.rm=TRUE)
+```
+
+
+\newpage 
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+`r median(myAQI_cpt$age, na.rm=TRUE)`     12        12            `r median(myAQI_cpt$age, na.rm=TRUE)`
+    123     123       123          123
+      1     1          1             1
+
+Table:  Demonstration of simple table syntax.
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+     12     12        12            12
+    123     123       123          123
+      1     1          1             1
+
+Table:  Demonstration of simple table syntax.
