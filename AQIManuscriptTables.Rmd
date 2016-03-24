@@ -73,7 +73,7 @@ Groups <- c(
 Table1 <- data.frame(Groups=Groups, Variables=Variables, Total=Total)
 
 kable(Table1)
-
+save(Table1, file="Tables/Table1")
 ```
 
 Table 1 Population characteristics describes the subpopulation in the NACOR database with information on antiemetic administration. We found statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
