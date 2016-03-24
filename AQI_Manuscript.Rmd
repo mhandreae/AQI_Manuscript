@@ -5,11 +5,11 @@ title: \normalsize Utilization of Antiemetic Medication as a Marker of Healthcar
 csl: Bibliography/anesthesiology.csl
 fontfamily: pslatex
 output:
+  word_document: default
   pdf_document:
     includes:
       in_header: header.tex
     keep_tex: yes
-  word_document: default
 geometry: margin=1in
 header-includes: \setlength\parindent{24pt}
 linestretch: 2
@@ -229,14 +229,31 @@ Our analysis of the association between insurance status (as a marker of patient
 
 ## Table 1 Population characteristics {#Table1}
 
+### first Table 1
+
+```{r make_first_table1, eval=FALSE}
+Table <- read.csv("C:/Users/Micheal/Dropbox/Professional/AQI/Yeti/AQI Yeti/Table.csv")
+save(Table1, file="Tables/Table")
+```
+
 ```{r,eval=FALSE}
 # C:\Users\Michael Andreae\Dropbox\Professional\AQI\Robert\tables for abstract
 library(knitr)
-Table <- read.csv("C:/Users/Michael Andreae/Dropbox/Professional/AQI/Yeti/AQI Yeti/Table.csv")
+load("Tables/Table")
 kable(Table[1:9,1:4], row.names=FALSE)
 ```
 
+
+### second Table 1
+
+```{r second_table1}
+require(knitr)
+load("Tables/Table1")
+kable(Table1)
+```
 Table 1 Population characteristics describes the subpopulation in the NACOR database with information on antiemetic administration. We found  statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
+
+
 
 ## Table 2 Insurance status versus antiemetic prophylaxis{#Table2}
 
