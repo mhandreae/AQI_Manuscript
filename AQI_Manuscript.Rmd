@@ -32,11 +32,17 @@ This research is supported in part by the National Center for Advancing Translat
 
 **Number of words in Abstract (400), in Introduction (500), and in Discussion (1,500)**
 
-\pagebreak
+\newpage
 
-\textbf{Abstract}
+#Abstract
 
-**Background:** US Health care disparities persist despite repeated countermeasures. Research identified race, ethnicity, gender, and socio-economic status as predictors, mediated through individual provider and/or systemic biases; little research exists in anesthesiology. We investigated antiemetic prophylaxis as a surrogate marker for anesthesia quality by individual providers, because antiemetics are universally available, indicated independent of patient co-morbidities and not yet impacted by regulatory or financial constraints. **Methods:** We hypothesize that socioeconomic markers (like insurance status or median income in the patients home zip code area) predict antiemetic prophylaxis as a marker of anesthesia quality. We fit a mixed logistic regression models in the subset of anesthesia cases in the National Anesthesia Clinical Outcomes Registry (NACOR) with complete electronic anesthesia records to test our hypothesis. **Results:** Seven institutions reported insurance status and antiemetic utilization for 176,334 anesthesia cases, out of the 12 million cases in NACOR 2014. Bivariate analysis, multivariate logistic regression and our Bayesian hierarchical model all showed a strong and statistically significant association between socioeconomic markers and the odds of receiving antiemetic prophylaxis; *for medicaid versus commercially insured patients, the odds ratio of receiving the antiemetic ondansetron is 0.63 in our final logistic regression model with a 95% confidence interval of [0.62, 0.66] with similar Bayesian inferences.* **Discussion:** Our data support the notion that individual anesthesia providers administer lesser quality care to patients with lower socioeconomic status. We controlled for some important patient characteristics as well as for procedure and provider. Our sample may not be representative and may fail to account for all confounders. Our results point to possible unappreciated healthcare disparities in anesthesia at the provider level which are worrisome and deserve further investigation and vigorous countermeasures.
+**Background:** US Health care disparities persist despite repeated countermeasures. Research identified race, ethnicity, gender, and socio-economic status as predictors, mediated through individual provider and/or systemic biases; little research exists in anesthesiology. We investigated antiemetic prophylaxis as a surrogate marker for anesthesia quality by individual providers, because antiemetics are universally available, indicated independent of patient co-morbidities and not yet impacted by regulatory or financial constraints. 
+
+**Methods:** We hypothesize that socioeconomic markers (like insurance status or median income in the patients home zip code area) predict antiemetic prophylaxis as a marker of anesthesia quality. We fit a mixed logistic regression models in the subset of anesthesia cases in the National Anesthesia Clinical Outcomes Registry (NACOR) with complete electronic anesthesia records to test our hypothesis. 
+
+**Results:** Seven institutions reported insurance status and antiemetic utilization for 176,334 anesthesia cases, out of the 12 million cases in NACOR 2014. Bivariate analysis, multivariate logistic regression and our Bayesian hierarchical model all showed a strong and statistically significant association between socioeconomic markers and the odds of receiving antiemetic prophylaxis; for medicaid versus commercially insured patients, the odds ratio of receiving the antiemetic ondansetron is 0.63 in our final logistic regression model with a 95% confidence interval of [0.62, 0.66] with similar Bayesian inferences. 
+
+**Discussion:** Our data support the notion that individual anesthesia providers administer lesser quality care to patients with lower socioeconomic status. We controlled for some important patient characteristics as well as for procedure and provider. Our sample may not be representative and may fail to account for all confounders. Our results point to possible unappreciated healthcare disparities in anesthesia at the provider level which are worrisome and deserve further investigation and vigorous countermeasures.
 
 ```{r, global_options, echo=FALSE}
 suppressWarnings(library(knitr))
@@ -58,17 +64,17 @@ The healthcare disparities in the United States of America described decades ago
 Poverty, poor education, differences in medical insurance coverage, geographic location, legal or social status, race & gender, patient and community attitudes & perceptions and, last but not least, provider bias lead to healthcare disparities[@Silber_23719571]. A systematic review by Haider suggested that insurance status, median income, race, ethnicity, and socioeconomic status predict trauma outcomes, independent of injury type[@Haider_23609267]. LaPar showed that Medicaid and uninsured payer status confer increased risk-adjusted mortality for major surgery in the National Inpatient Database [@LaPar2010].
 
 ## Significance
-Does healthcare disparities exist also in anesthesia? A systematic review and meta-analysis by Meghani raises alarm about the persistent racial and ethnic disparities in the treatment of pain, clearly a domain of anesthesiologists[@Meghani_22239747]. We described language as barrier to access chronic pain services[@Shaparin_24747766]. Jimenez found disparities in pain treatment in children[@Jimenez_20173265]. Unfortunately, apart from labor analgesia[@Toledo_22075013; @Glance_17197841; @Rust_15343221; @Elisha_22403965] and pain medicine[@Glance2015;@Gaba_10720368;@Leape_7503827;@Silber_10861159], the literature on anesthesia related health disparities seems sparse[@Silber_23719571]. 
+Do healthcare disparities exist also in anesthesia? A systematic review and meta-analysis by Meghani raises alarm about the persistent racial and ethnic disparities in the treatment of pain, clearly a domain of anesthesiologists[@Meghani_22239747]. We described language as barrier to access chronic pain services[@Shaparin_24747766]. Jimenez found disparities in pain treatment in children[@Jimenez_20173265]. Unfortunately, apart from labor analgesia[@Toledo_22075013; @Glance_17197841; @Rust_15343221; @Elisha_22403965] and pain medicine[@Glance2015;@Gaba_10720368;@Leape_7503827;@Silber_10861159], the literature on anesthesia related health disparities seems sparse[@Silber_23719571]. 
 
 ## Objective
 
-We propose to investigate antiemetic utilization (AU) as a marker of quality anesthesia care. Three characteristics make AU a good marker: 
+We propose to investigate antiemetic utilization (AU) as a marker of quality anesthesia care and health care disparity. Three characteristics make AU a good marker: 
 
-1. AU is relatively independent of patient characteristics (e.g. genetic disease, ability to pay or geographic location), 
-2. AU is the sole esponsibility of anesthesia providers,
-3. AU is not influenced by regulatory, monetary or insurance constraints and has a an accepted standard of care [@Apfel_15190136].
+1. Antiemetic utilization is relatively independent of patient characteristics (e.g. genetic disease, ability to pay or geographic location), 
+2. antiemetic utilization is the sole esponsibility of anesthesia providers,
+3. antiemetic utilization is not influenced by regulatory, monetary or insurance constraints and has a an accepted standard of care [@Apfel_15190136].
 
-This paper investigates if antiemetic utilization is predicted by socioeconomic status, [insurance status or median income in the patients' home zip code]. We explore this association in the subset of the National Anesthesia Clinical Outcomes Registry (NACOR) with full electronic anesthesia reporting antiemetic adminstration [@Dutton_21871404].
+This paper investigates if antiemetic utilization is predicted by socioeconomic status. We explore the association of the two predictors insurance status and median income in the patients' home zip code with antiemetic utilization of ondansetron and/or dexamethason in the subset of the National Anesthesia Clinical Outcomes Registry (NACOR) with full electronic anesthesia records [@Dutton_21871404].
 
 ## Hypothesis
 
