@@ -292,17 +292,6 @@
   Timestamp                = {2015.05.07}
 }
 
-@Manual{rstanarm,
-  Title                    = {rstanarm: Bayesian Applied Regression Modeling via Stan},
-  Author                   = {Jonah Gabry and Ben Goodrich},
-  Note                     = {R package version 2.9.0-1},
-  Year                     = {2016},
-
-  Owner                    = {Micheal},
-  Timestamp                = {2016.03.29},
-  Url                      = {http://CRAN.R-project.org/package=rstanarm}
-}
-
 @Article{R_hat_Gelman_1992,
   Title                    = {Inference from iterative simulation using multiple sequences},
   Author                   = {Gelman, Andrew and Rubin, Donald B},
@@ -579,7 +568,6 @@
   Number                   = {3},
   Pages                    = {544--50; discussion 550-1},
   Volume                   = {252},
-
   Abstract                 = {Medicaid and Uninsured populations are a significant focus of current healthcare reform. We hypothesized that outcomes following major surgical operations in the United States is dependent on primary payer status.From 2003 to 2007, 893,658 major surgical operations were evaluated using the Nationwide Inpatient Sample (NIS) database: lung resection, esophagectomy, colectomy, pancreatectomy, gastrectomy, abdominal aortic aneurysm repair, hip replacement, and coronary artery bypass. Patients were stratified by primary payer status: Medicare (n = 491,829), Medicaid (n = 40,259), Private Insurance (n = 337,535), and Uninsured (n = 24,035). Multivariate regression models were applied to assess outcomes.Unadjusted mortality for Medicare (4.4\%; odds ratio [OR], 3.51), Medicaid (3.7\%; OR, 2.86), and Uninsured (3.2\%; OR, 2.51) patient groups were higher compared to Private Insurance groups (1.3\%, P < 0.001). Mortality was lowest for Private Insurance patients independent of operation. After controlling for age, gender, income, geographic region, operation, and 30 comorbid conditions, Medicaid payer status was associated with the longest length of stay and highest total costs (P < 0.001). Medicaid (P < 0.001) and Uninsured (P < 0.001) payer status independently conferred the highest adjusted risks of mortality.Medicaid and Uninsured payer status confers increased risk-adjusted mortality. Medicaid was further associated with the greatest adjusted length of stay and total costs despite risk factors or operation. These differences serve as an important proxy for larger socioeconomic and health system-related issues that could be targeted to improve surgical outcomes for US Patients.},
   Doi                      = {10.1097/SLA.0b013e3181e8fd75},
   Institution              = {Department of Surgery, University of Virginia Health System, Charlottesville, VA 22908-0679, USA.},
