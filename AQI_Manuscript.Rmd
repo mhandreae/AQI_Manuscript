@@ -2,18 +2,11 @@
 title: \normalsize Utilization of Antiemetic Medication as a Marker of Healthcare
   Disparities in Anesthesia \newline A Bayesian Hierarchical Model Using the National
   Anesthesia Clinical Outcomes Registry
-csl: Bibliography/anesthesiology.csl
+csl: Bibliography/anesthesia-and-analgesia.csl
 fontfamily: pslatex
 output:
-  word_document: default
-  pdf_document:
-    includes:
-      in_header: header.tex
-    keep_tex: yes
-geometry: margin=1in
-header-includes: \setlength\parindent{24pt}
-linestretch: 2
-fontsize: 12pt
+  word_document: 
+    reference_docx: mystyles.docx
 bibliography: Bibliography/AQI_bibliography6May2015.bib
 ---
 
@@ -31,13 +24,13 @@ Charles Hall, PhD, Department of Epidemiology & Population Health, Albert Einste
 
 # Corresponding author:
 
-Michael Andreae, MD, Email: mandreae@montefiore.org, Tel: +1 (718)920 2802, Address: Department of Anesthesiology, Montefiore Medical Center, 111 E 210th Street, Bronx, NY 10467
+Michael Andreae, MD, Address: Department of Anesthesiology, Montefiore Medical Center, 111 E 210th Street, Bronx, NY 10467, Tel: +1 (718)920 2802, Email: mandreae@montefiore.org
 
 # Acknowledgement
 
 This research is supported in part by the National Center for Advancing Translational Sciences (NCATS), a component of the National Institutes of Health (NIH), through CTSA grant numbers 5KL2TR001071-03 and UL1 TR001073. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the NIH.
 
-**Number of words in Abstract (250), in Introduction (500), and in Discussion (1,500)**
+**Number of words in Abstract (400), in Introduction (500), and in Discussion (1,500)**
 
 \pagebreak
 
@@ -60,23 +53,26 @@ eval_everything=FALSE
 
 # Introduction (500 word limit)
 
-## Healthcare disparities persist in the United States
-The healthcare disparities in the United States of America described decades ago by Gornick[@Gornick_8703185], unabatedly persist to the present[@Schoen_24226092] and are linked to social determinants of health and equality[@Cooper_22566148]. Strikingly, compared to Caucasians, life expectancy for African Americans is almost 4 years shorter[@Kochanek_24152376]. The medical profession cannot and will not accept this grave inequality which contradicts basic principles of medical ethics[@IOM_2003]. Poverty, poor education, differences in medical insurance coverage, geographic location, legal or social status, race & gender, patient and community attitudes & perceptions and, last but not least, provider bias might lead to healthcare disparities also in anesthesia[@Silber_23719571]. This paper investigates if antiemetic utilization (AU) as a marker of quality anesthesia care is predicted by socioeconomic status (measured by insurance status and median income in the patients' home zip code) in the large National Anesthesia Clinical Outcomes Registry (NACOR)[@Dutton_21871404]. 
+## Background
+The healthcare disparities in the United States of America described decades ago by Gornick[@Gornick_8703185], persist and are linked to social determinants of health and equality[@IOM_2003;@Cooper_22566148; @Schoen_24226092].
+Poverty, poor education, differences in medical insurance coverage, geographic location, legal or social status, race & gender, patient and community attitudes & perceptions and, last but not least, provider bias lead to healthcare disparities[@Silber_23719571]. A systematic review by Haider suggested that insurance status, median income, race, ethnicity, and socioeconomic status predict trauma outcomes, independent of injury type[@Haider_23609267]. LaPar showed that Medicaid and uninsured payer status confer increased risk-adjusted mortality for major surgery in the National Inpatient Database [@LaPar2010].
 
-## Healthcare disparities pervade surgery, anesthesia, and pain medicine
+## Significance
+Does healthcare disparities exist also in anesthesia? A systematic review and meta-analysis by Meghani raises alarm about the persistent racial and ethnic disparities in the treatment of pain, clearly a domain of anesthesiologists[@Meghani_22239747]. We described language as barrier to access chronic pain services[@Shaparin_24747766]. Jimenez found disparities in pain treatment in children[@Jimenez_20173265]. Unfortunately, apart from labor analgesia[@Toledo_22075013; @Glance_17197841; @Rust_15343221; @Elisha_22403965] and pain medicine[@Glance2015;@Gaba_10720368;@Leape_7503827;@Silber_10861159], the literature on anesthesia related health disparities seems sparse[@Silber_23719571]. 
 
-A systematic review by Haider suggested that insurance status, median income, race and ethnicity, and socioeconomic status predict trauma outcomes, independent of injury type[@Haider_23609267]. LaPar showed that Medicaid and uninsured payer status confer increased risk-adjusted mortality for major surgery in the National Inpatient Database [@LaPar2010]. Already in 1977, Egbert described race as a predictor to receive treatment from a resident surgeon as opposed to a fully trained attending[@Egbert_325411]. Resident surgeons involvement can lead to longer case duration[@Silber_23719571], which in turn can increase infection rates[@Campbell_19183526]. Black patients are at higher risk for poor outcomes after diverticulitis surgery, especially in emergency cases[@Alavi_22125173]. Minorities are more likely to be treated by surgeons with lower surgical volumes, with the latter being linked to poorer outcomes[@Haider_23318117]. The surgical approach may differ with whites more likely to receive less invasive minimal surgery[@Ricciardi_18594921]. Do similar mechanisms lead to healthcare disparities also in anesthesia? A systematic review and meta-analysis by Meghani raises alarm about the persistent racial and ethnic disparities in the treatment of pain, clearly a domain of anesthesiologists[@Meghani_22239747]. We described language as barrier to access chronic pain services[@Shaparin_24747766]. Jimenez found disparities in pain treatment in children[@Jimenez_20173265]. The literature on anesthesia related health disparities[@Silber_23719571] seems sparse, apart from labor analgesia[@Toledo_22075013; @Glance_17197841; @Rust_15343221; @Elisha_22403965] and pain medicine. Given the central contribution of anesthesiologist on perioperativee outcomes[@Glance2015;@Gaba_10720368;@Leape_7503827;@Silber_10861159]. 
+## Objective
 
-## Finding the Culprit: Who is Responsible for Healthcare Disparities?
-To single out the effect of anesthesia providers in the perioperative process, can be perplexing[@Cook_22353147; @Silber_23719571]; we conceptualize the many potential confounders as (1) patient preoperative risk factors, (2) procedure related confounders, (3) institutional or geographic factors [@Cooper_22566148] (4) systematic and institutional bias, (5) provider behavior. 
+We propose to investigate antiemetic utilization (AU) as a marker of quality anesthesia care. Three characteristics make AU a good marker: 
 
-We propose to investigate antiemetic utilization (AU) as a surrogate marker of quality of anesthesia care. Three characteristics make AU a good surrogate marker. (1) AU is independence of patient characteristics (comorbidity, genetic disease, health status, ability to pay, patient attitudes and choices, income, education level, geographic location) (2) AU is the sole esponsibility of anesthesia providers.(3) AU is not influenced by regulatory, monetary or insurance constraints and has a an accepted standard of care [@Apfel_15190136]. There are two principle choices of antiemetic prophylaxis, (a) ondansetron and (b) dexamethason. (a) Ondansetron is still under patent protection and therefore costly; its administration may be constraint by monetary considerations. Ondansetron is contraindicated in certain cardiac conditions (QT prolongation). (b) Dexamethason is off patent, widely available, extremely cheap and without any contraindications. *Either* of the two antiemetic agents should be available and suitable for prophylaxis of postoperative nausea and vomiting (PONY), if indicated in any given patient.
+1. AU is relatively independent of patient characteristics (e.g. genetic disease, ability to pay or geographic location), 
+2. AU is the sole esponsibility of anesthesia providers,
+3. AU is not influenced by regulatory, monetary or insurance constraints and has a an accepted standard of care [@Apfel_15190136].
+
+This paper investigates if antiemetic utilization is predicted by socioeconomic status, [insurance status or median income in the patients' home zip code]. We explore this association in the subset of the National Anesthesia Clinical Outcomes Registry (NACOR) with full electronic anesthesia reporting antiemetic adminstration [@Dutton_21871404].
 
 ## Hypothesis
 
-Socioeconomic status predicts antiemetic utilization as a surrogate marker of anesthesia quality, in the subset of the National Anesthesia Outcome Registry (NACOR) with full electronic anesthesia records[@Dutton_21871404], after allowing for institutional and geographic variability, patient preoperative riskfactors, procedure and anesthesia type and controlling for individual provider behavior. 
-
------
+Our hypothesis is that socioeconomic patient characteristics will predict antiemetic utilization after controlling for institutional and geographic variability, patient preoperative risk factors, procedure and anesthesia type and controlling for individual provider behavior.
 
 \newpage
 
@@ -176,6 +172,9 @@ The strong and statistically significant association (p < 0.001) between insuran
 ## Summary of the findings
 
 Bivariate analysis, multivariate logistic regression and our Bayesian hierarchical model all showed a strong and statistically significant association between insurance status and the odds of receiving antiemetic prophylaxis; for medicaid versus commercially insured patients, the odds ratio of receiving the antiemetic ondansetron is 0.63 in our final logistic regression model with a 95% confidence interval of [0.62, 0.66] with similar Bayesian inferences. 
+
+## Significance
+To single out the effect of anesthesia providers in the perioperative process, can be perplexing[@Cook_22353147; @Silber_23719571]; we conceptualize the many potential confounders as (1) patient preoperative risk factors, (2) procedure related confounders, (3) institutional or geographic factors [@Cooper_22566148] (4) systematic and institutional bias, (5) provider behavior. 
 
 ## Strength
 The size of the subset of NACOR we studied likely makes this the largest study of healthcare disparities in anesthesia undertaken to date. This increased our power to detect an association between insurance status and antiemetic prophylaxis. Controlling for likely confounders decreases the chance that the association is spurious.
