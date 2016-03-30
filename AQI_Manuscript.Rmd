@@ -9,24 +9,23 @@ output:
     reference_docx: mystyles.docx
 bibliography: Bibliography/AQI_bibliography6May2015.bib
 ---
-
 \setlength{\parindent}{0ex}
 
-# Authors
+##### Authors
 
 Michael H. Andreae, MD, Department of Anesthesiology, Montefiore Medical Center, Albert Einstein College of Medicine, Bronx, NY
 
-Jonah Galbry, MSc, Department of Statistics, Columbia University, New York, NY
+Jonah S. Galbry, MSc, Department of Statistics, Columbia University, New York, NY
 
 Robert S White, MD, Department of Anesthesiology, Weill Cornell Medical Center, New York, NY
 
 Charles Hall, PhD, Department of Epidemiology & Population Health, Albert Einstein College of Medicine, Bronx, NY
 
-# Corresponding author:
+##### Corresponding author:
 
 Michael Andreae, MD, Address: Department of Anesthesiology, Montefiore Medical Center, 111 E 210th Street, Bronx, NY 10467, Tel: +1 (718)920 2802, Email: mandreae@montefiore.org
 
-# Acknowledgement
+##### Acknowledgement
 
 This research is supported in part by the National Center for Advancing Translational Sciences (NCATS), a component of the National Institutes of Health (NIH), through CTSA grant numbers 5KL2TR001071-03 and UL1 TR001073. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the NIH.
 
