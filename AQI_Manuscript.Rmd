@@ -5,7 +5,8 @@ title: \normalsize Utilization of Antiemetic Medication as a Marker of Healthcar
 csl: Bibliography/anesthesia-and-analgesia.csl
 fontfamily: pslatex
 output:
-  word_document: 
+  pdf_document: default
+  word_document:
     reference_docx: mystyles.docx
 bibliography: Bibliography/AQI_bibliography6May2015.bib
 ---
@@ -98,7 +99,7 @@ Besides patient demographics and American Association of Anesthesiology risk cla
 
 3. Generic and detailed insurance information, {subset with 176334 casescontained in the superset}.
 
-We described the characteristic of the superset and subsets of the NACOR dataset forming the bases of our analysis, i.e. anesthesia records with complete information on the administration of antiemetic prophylaxis and/or insurance information, procedure code, median income... We explored the bivariate associations between the dichotomous  outcome variable antiemetic utlization and the independent variables describing patients, procedures & providers; patient characteristics included medical insurance status (our primary predictor of interest), patient age, gender, American Association of Anesthesiology risk classification. Neither race nor ethnicity was recorded in NACOR. We reported procedure types and indications (Billing code, modifiers, indication ICD code). Provider characteristics include information on the anesthetist [nurse anesthetist versus resident versus attending alone] and institutional data [geographic location, academic versus private versus government institution]. 
+We described the characteristic of the superset and subsets of the NACOR dataset forming the bases of our analysis, i.e. anesthesia records with complete information on the administration of antiemetic prophylaxis and/or insurance information, procedure code, median income... We explored the bivariate associations between the dichotomous  outcome variable antiemetic utlization [defined as either the administration of *ondansetron* or of *ondansetron and/or dexamethason*], and the independent variables describing patients, procedures & providers; patient characteristics included medical insurance status (our primary predictor of interest), patient age, gender, American Association of Anesthesiology risk classification. Neither race nor ethnicity was recorded in NACOR. We reported procedure types and indications (Billing code, modifiers, indication ICD code). Provider characteristics include information on the anesthetist [nurse anesthetist versus resident versus attending alone] and institutional data [geographic location, academic versus private versus government institution]. 
 
 ## Statistical analysis
 
@@ -132,35 +133,36 @@ $$
    \end{aligned}
 $$
 
-where $\mu$ is the population averaged probability of an event (e.g. ondansetron administration). In the i^th^ anesthetic, $x_{ij}$ is the indicator for the predictor j (e.g. insurance status = medicaid), with $\beta_j$ the coefficient of effect, (e.g. for the contrast between medicaid and commerical insurance or the effect of gender); $z_{ik}$ the indicator for the random effect (e.g. the procedure code or the provider of the i^th^ anesthetic case), $b_k$ is the estimate for the random intercept (the odds of antiemetic utilization for that type of procedure).  There are no patient identifiers to track repeated anesthetics administered to the same patient. We used the default priors as described in the software package[@rstanarm], i.e. we used uninformative priors for the main effect of insurance status on antiemetic prophylaxis. We performed a sensitivity analysis investigating the appropriateness of our model assumptions. 
+where $\mu$ is the population averaged probability of an event (e.g. ondansetron administration). In the i^th^ anesthetic, $x_{ij}$ is the indicator for the predictor j (e.g. insurance status = medicaid), with $\beta_j$ the coefficient of effect, (e.g. for the contrast between medicaid and commercial insurance or the effect of gender); $z_{ik}$ the indicator for the random effect (e.g. the procedure code or the provider of the i^th^ anesthetic case), $b_k$ is the estimate for the random intercept (the odds of antiemetic utilization for that type of procedure).  There are no patient identifiers to track repeated anesthetics administered to the same patient. We used the default priors as described in the software package[@rstanarm], i.e. we used uninformative priors for the main effect of insurance status on antiemetic prophylaxis. We performed a sensitivity analysis investigating the appropriateness of our model assumptions. 
 
 We compared the results of our three models (bivariate, logistic regression and Bayesian analysis) to confirm the robustness of our findings regardless of the model choices or statistical approach chosen.
 
 ### Software used
 
-we used the statistical software *Stata*\textsuperscript{\textregistered} for the regression and bivariate analysis[@Stata_2014]. We used R, the public domain statistical software package and the probabilist programming software *Stan* in conjunction with the R software packages *rstan* and *rstanarm* [@R_software; @Stan_Software_2014; @rstanarm] to implement the hierarchical mixed Bayesian models with *Stan’s* Hamiltonian Monte Carlo algorithms. These are available under the General Public License of the Free Software Foundation[@GNU_1991] at no cost. We used the software package *shinyStan* for graphical exploration of model convergence and the Monte Carlo Markov Chain output, to generate the contrasts to compare commerical versus medicaid and for posterior predicitive checking[@shinystan-software_2015].
+we used the statistical software *Stata*\textsuperscript{\textregistered} for the regression and bivariate analysis[@Stata_2014]. We used R, the public domain statistical software package and the probabilist programming software *Stan* in conjunction with the R software packages *rstan* and *rstanarm* [@R_software; @Stan_Software_2014; @rstanarm] to implement the hierarchical mixed Bayesian models with *Stan’s* Hamiltonian Monte Carlo algorithms. These are available under the General Public License of the Free Software Foundation[@GNU_1991] at no cost. We used the software package *shinyStan* for graphical exploration of model convergence and the Monte Carlo Markov Chain output, to generate the contrasts to compare commercial versus medicaid and for posterior predicitive checking[@shinystan-software_2015].
 \newpage
 
 # Results
 
 ## Description of the dataset
 
-Our analysis is focused on the superset of NACOR's PUF with information on both antiemetic usage *and* insurance status and its subsets with additional information on procedure codes and median income in the patients' home zip code as shown on in the flow diagram. 
+Our analysis is focused on the superset of NACOR's PUF with information on both antiemetic usage *and* insurance status and its subsets with additional information on procedure codes and median income in the patients' home zip code. The attrition of anesthesia cases with complete data as we include additional predictors like procedure code is shown on in the flow diagram in Figure 1. 
 
-Unfortunately, only 441645 cases in the Public User File (PUF) contained detailed information on medications administered during anesthesia administration at the end of 4th quarter 2014. Six unique institutions reported insurance status and antiemetic utilization for 176334 anesthesia cases, out of the 12 million cases in NACOR 2014. Limiting this set further to cases with information on medical insurance, the dataset of our study contained 176334 anesthesia cases.The reporting institutions were mostly university hospitals or medium to large community hospitals, mostly in the Southern United States . Our dataset contained no cases from the Midwest or the West of the Unites States. Anesthesia was provided between 2010 and 2014.
+Unfortunately, only 441645 cases in the Public User File (PUF) contained detailed information on medications administered during anesthesia administration at the end of 4th quarter 2013. Six unique institutions reported insurance status and antiemetic utilization for 176334 anesthesia cases, out of the 12 million cases in NACOR. Limiting this set further to cases with information on medical insurance, the dataset of our study contained 176334 anesthesia cases.The reporting institutions were mostly university hospitals or medium to large community hospitals, mostly in the Southern United States . Our dataset contained no cases from the Midwest or the West of the Unites States. Anesthesia was provided between 2010 and 2014.
 
-The prevalence of ondansetron administration for different insurance status is  described in [Table 2 Insurance status versus antiemetic prophylaxis]. Clearly,  Patients who have commerical insurance are more likely to receive antiemetic prophylaxis than those who have medicaid.
-
-### Population
-The demograpics of the subpopulation in the NACOR database with information on antiemetic administration are described in [Table 1 Population characteristics]. 42 percent of anesthetics were administered to male patients. Patients’ age ranged from newborn to 90 years of age with a median of 54 (Interquartile range (IQR) between 35 and 67 years). Most patients were classified as ASA class 2, 3 or 4 (39, 37 and 16 %, respectively) with only 7 percent in class 1 or 5.  62 percent were outpatients among the 64% of cases where this information was available. For 25865 cases the insurances was reported as medicaid, for another 97443 as medicare for the remaining 51441cases mostly as commercial insurance with 1585 self-insured cases. Some antiemetic was administered in 55 percent of all cases. 
+### Population characteristics
+The demograpics of the subpopulation in the NACOR database with information on antiemetic administration are described in [Table 1 Population characteristics]. 42 percent of anesthetics were administered to male patients. Patients’ age ranged from newborn to 90 years of age with a median of 54 (Interquartile range (IQR) between 35 and 67 years). Most patients were classified as ASA class 2, 3 or 4 (39, 37 and 16 %, respectively) with only 7 percent in class 1 or 5.  62 percent were outpatients among the 64% of cases where this information was available. For 25865 cases the insurances was reported as medicaid, for another 97443 as medicare for the remaining 51441 cases mostly as commercial insurance with 1585 self-insured cases. At least one antiemetic (either ondansetron or dexamethason) was administered in 55 percent of all cases. 
 
 ### Bivariate comparison of demographic charactersitics
+
+We explored the preponderance for antiemetic prophylaxis contingent on patient demogrpahics in [Table 2 Predictors of antiemetic prophylxis]. The prevalence of ondansetron administration for different insurance status is  described in [Table 3 Insurance status versus antiemetic prophylaxis]. Clearly,  Patients who have commercial insurance are more likely to receive antiemetic prophylaxis than those who have medicaid.
+
 We found  statistically significant differences (p<0.001) in all demographic bivariate comparisons; they suggests that patients who received ondansetron (Zofran\textsuperscript{\textregistered}) were on average younger and more likely to be female, to have a slighly longer procedure, but as an outpatient, less likely to have undergone emergency surgery, more likely to live in the South in a zip code with higher mean income and smaller population size. 
 
 ## Association between insurance status and antiemetic administration
 
 ### Logistic regression analysis
-We show the results of our final logistic regression model in the [Table 3 Logistic regression]. Being on medicaid or medicare, compared to having commerical insurance, drastically reduces the odds of receiving ondansetron during anesthesia. For the average patient on medicaid or medicare, the odds of receiving ondansetron for anti-emetic prophylaxis are 0.6 compared to a patient with commerical insurance with otherwise similar characteristics, even after controlling for age and gender, case duration, median income and population in the patient's home zip code. 
+We show the results of our final logistic regression model in the [Table 3 Logistic regression]. Being on medicaid or medicare, compared to having commercial insurance, drastically reduces the odds of receiving ondansetron during anesthesia. For the average patient on medicaid or medicare, the odds of receiving ondansetron for anti-emetic prophylaxis are 0.6 compared to a patient with commercial insurance with otherwise similar characteristics, even after controlling for age and gender, case duration, median income and population in the patient's home zip code. 
 
 ### Stratified analysis
 
@@ -168,7 +170,7 @@ We performed a stratified analysis, calculating the odds ratios for receiving on
 
 ### Hierachical Bayesian model
 
-[Table 5  Bayesian model] shows the parameter estimates for our simple Bayesian hierarchical model in a table. This Bayesian model only controlled for the effect of the institution as a random effect. Also in this model, having medicaid versus commerical insurance  was associated with receiving anti-emetic prophylaxis with an odds ratio of 0.6 with a narrow credible 95% interval [0.59, 0.62] . Remarkably, the random effects estimated for the different institutions in which the surgery took place vary considerably, suggesting that healthcare disparities may be endemic, or locally more or less pronounced.
+[Table 5  Bayesian model] shows the parameter estimates for our simple Bayesian hierarchical model in a table. This Bayesian model only controlled for the effect of the institution as a random effect. Also in this model, having medicaid versus commercial insurance  was associated with receiving anti-emetic prophylaxis with an odds ratio of 0.6 with a narrow credible 95% interval [0.59, 0.62] . Remarkably, the random effects estimated for the different institutions in which the surgery took place vary considerably, suggesting that healthcare disparities may be endemic, or locally more or less pronounced.
 
 #### Our Bayesian model converged. 
 The convergence of our Bayesian model was confirmed by looking at traceplots and the Gelman Rubin statistics[@R_hat_Gelman_1992], shown for selected parameters of our Bayesian model.
@@ -238,65 +240,70 @@ Our analysis of the association between insurance status (as a marker of patient
 
 ## Table 1 Population characteristics {#Table1}
 
-### first Table 1
+```{r second_table1}
+require(knitr)
+load("Tables/Table1.Rdata")
+kable(Table1)
+```
+
+Table 1 describes the population characteristics for the superset in the NACOR database with information on antiemetic administration. We found  statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
+
+## Table 2 Predictors of antiemetic administration {#Table2}
 
 ```{r make_first_table1, eval=FALSE}
 Table <- read.csv("C:/Users/Micheal/Dropbox/Professional/AQI/Yeti/AQI Yeti/Table.csv")
-save(Table1, file="Tables/Table")
+names(Table) <- c("Variable", "Total", "No Ondansetron", 
+               "Ondansetron", "P.value")
+save(Table, file="Tables/Table.Rdata")
 ```
 
-```{r,eval=FALSE}
+```{r,eval=TRUE}
 # C:\Users\Michael Andreae\Dropbox\Professional\AQI\Robert\tables for abstract
 library(knitr)
-load("Tables/Table")
+load("Tables/Table.Rdata")
 kable(Table[1:9,1:4], row.names=FALSE)
 ```
 
+Table 2 describes the demographic characteristics predicting ondansetron use in the NACOR superset with electronic data on antiemetic administration. There seems to be a slight preponderance of ondansetron use in female patients, (who are at higher risk for postoperative nausea and vomiting) and in patients living in a zip code with a higher median income. 
 
-### second Table 1
+## Table 3 Insurance status versus antiemetic prophylaxis{#Table3}
 
-```{r second_table1}
-require(knitr)
-load("Tables/Table1")
-kable(Table1)
-```
-Table 1 Population characteristics describes the subpopulation in the NACOR database with information on antiemetic administration. We found  statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
-
-
-
-## Table 2 Insurance status versus antiemetic prophylaxis{#Table2}
-
-```{r,eval=FALSE}
+```{r,eval=TRUE}
 kable(Table[10:14,1:4], row.names=FALSE)
 ```
 
-Table 2 describes the subset of patients (among the subpopulation from Table 1 Population characteristics with information on antiemetic administation) who have data on insurance status. Clearly  Patients who have commerical insurance are more likely to receive antiemetic prophylaxis than those who have medicaid.
-
-## Table 3 Logistic regression {#Logistic_table}
-
-```{r,eval=FALSE}
-# AQI_stata_data_analysis.Rmd
-rm(list=ls())
-require(knitr)
-load("table_my_logistic2.Rdata")
-kable(table_my_logistic2, digit=3, row.names=TRUE)
-```
-
-The results of our logistic regression, presented in a table as odds ratios with the coresponding 95% confidence intervals, show that being on medicaid or medicare, compared to having commerical insurance, drastically reduces the odds of receiving ondansetron during anesthesia.
+Table 3 describes the association of insurance status with antiemetic adminstration in the NACOR case subset with data on 176334 anesthetic cases antiemetic adminstration *and* insurance status. Clearly  patients  with commercial insurance are more likely to receive antiemetic prophylaxis than those who are insured through medicaid or medicare. (This association was statistically highly significant in a Chi-square analysis with a p value < 0.001, in brackets the insurances in percent of the cases with and without ondansetron use.)
 
 ## Table 4 startified odds ratios 
 
 ```{r}
 rm(list=ls())
 require(knitr)
+
+## LOR calculated in stratified_analysis5May2015.Rmd
+## Path C:\Users\Micheal\Dropbox\Professional\AQI\Yeti\AQI Yeti
+
 load("Tables/LOR_table.Rdata")
-kable(OR_table, digits=3)
+kable(OR_table, digits=2)
 ```
 
-This table shows the odds ratios for receiving ondansetron for patients on medicaid versus patients on commercial insurance after we stratified for various possible confounders. Stratifying for gender, age, general anesthesia, outpatient surgery or the presence of a board certified anesthesiologist did change the odds ratio. However in all strata,  medicaid insurance status was associated with reduced odds of receiving antiemetic prophylaxis suggesting that the association holds accross the board.
+This table shows the odds ratios for receiving ondansetron for patients on medicaid versus patients on commercial insurance after we stratified for various possible confounders. Stratifying for gender, age, general anesthesia, outpatient surgery or the presence of a board certified anesthesiologist did change the odds ratio, as would be expected from a potential confounder. For example in the first row, being female versus make changes the odds slightly, but regardless of gender, the odds of receiving ondansetron are lower for a medicaid patient compared to a patient with commerical insurance.  Indeed, in each strata,  medicaid insurance status was associated with reduced odds of receiving antiemetic prophylaxis, suggesting that the association holds accross the board.
 
+## Table 5 Logistic regression {#Logistic_table}
 
-##Table 5  Bayesian model {#Bayesian_table}
+```{r,eval=TRUE}
+## Generated in
+## AQI_stata_data_analysis.Rmd
+## C:\Users\Micheal\Dropbox\Professional\AQI\Publish\AQI_Manuscript\Tables
+rm(list=ls())
+require(knitr)
+load("Tables/table_my_logistic2.Rdata")
+kable(table_my_logistic2, digit=3, row.names=TRUE)
+```
+
+The results of our classical logistic regression, presented in a table as odds ratios with the coresponding 95% confidence intervals, show that being on medicaid or medicare, compared to having commercial insurance, drastically reduces the odds of receiving ondansetron during anesthesia after controlling for potential confounders like gender, age, case duration (in our NACOR set with complete information on antiemetic use *and* insurance status).
+
+## Table 6  Bayesian model {#Bayesian_table}
 
 ```{r}
 rm(list=ls())
@@ -305,7 +312,7 @@ load("Tables/Bayesian_table.Rdata")
 kable(Bayesian_table[,c(2,1,3,4,5)], digits=3 )
 ```
 
-Having medicaid versus commerical insurance reduces the odds of receiving anti-emetic prophylaxis significantly in our Bayesian hierarchical model. This is clear from the estimated odds ratio of receiving ondansetron for the contrast of $\beta_1$ (medicaid) versus $\beta_3$ (commercial) shown with the corresponding 95% Bayesian credible intervals. Remarkably, the random effects estimated for the different institutions in which the surgery took place vary considerably, suggesting that healthcare disparities may be endemic, or locally more or less pronounced.
+Having medicaid versus commercial insurance reduces the odds of receiving anti-emetic prophylaxis significantly in our Bayesian hierarchical model. This is clear from the estimated odds ratio of receiving ondansetron for the contrast of $\beta_1$ (medicaid) versus $\beta_3$ (commercial) shown with the corresponding 95% Bayesian credible intervals. Remarkably, the random effects estimated for the different institutions in which the surgery took place vary considerably, suggesting that healthcare disparities may be endemic, or locally more or less pronounced.
 
 \newpage
 
@@ -321,6 +328,8 @@ Having medicaid versus commerical insurance reduces the odds of receiving anti-e
 \newpage
 
 # Figures
+
+## Figure 1 Flow diagram {#Figure1}
 
 \newpage
 
