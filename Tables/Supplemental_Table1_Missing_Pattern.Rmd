@@ -1,0 +1,33 @@
+---
+output:
+  word_document:
+    reference_docx: mytables.docx
+---
+
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+***
+
+## Supplemental Table 1. Missing Pattern
+
+---
+
+```{r supplemental_table1}
+rm(list=ls())
+require(knitr)
+
+## Missingness Table calculated in AQI_Import.Rmd
+## Path C:\Users\Micheal\Dropbox\Professional\AQI\AQI_Import\Results
+
+load("missingnesstable.Rdata")
+kable(missingnesstable, digits=2)
+```
+
+Supplemental Table 1 shows the missing pattern in our NACOR dataset. We tabulate in the diagonale the number of missing observations for each variable; in the upper triagle of the table, the number of jointly *observed* and in the lower triangle the number of jointly *missing* observations for the corresponding variable pair. For example while both gender and age group are recorded in all 441553 cases (hence zero missing data) in our NACOR superset with complete information on antiemetic administration, only 128999 have complete information on insurance type *and* procedure code, a sigificant attrition.
