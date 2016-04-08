@@ -1,0 +1,16 @@
+---
+title: "Table 1 Population Characteristics"
+author: "Michael Andreae"
+date: "April 8, 2016"
+output: word_document
+---
+## Table 1 Population characteristics {#Table1}
+
+
+```{r second_table1}
+require(knitr)
+load("Table1.Rdata")
+kable(Table1)
+```
+
+Table 1 describes the population characteristics for the superset in the NACOR database with information on antiemetic administration. We found  statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
