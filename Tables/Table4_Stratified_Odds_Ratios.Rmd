@@ -1,0 +1,32 @@
+---
+output:
+  word_document:
+    reference_docx: mytables.docx
+---
+
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+***
+## Table 4 stratified odds ratios 
+
+---
+
+```{r}
+rm(list=ls())
+require(knitr)
+
+## LOR calculated in stratified_analysis5May2015.Rmd
+## Path C:\Users\Micheal\Dropbox\Professional\AQI\Yeti\AQI Yeti
+
+load("LOR_table.Rdata")
+kable(OR_table, digits=2)
+```
+
+This table shows the odds ratios for receiving ondansetron for patients on medicaid versus patients on commercial insurance after we stratified for various possible confounders. Stratifying for gender, age, general anesthesia, outpatient surgery or the presence of a board certified anesthesiologist did change the odds ratio, as would be expected from a potential confounder. For example in the first row, being female versus make changes the odds slightly, but regardless of gender, the odds of receiving ondansetron are lower for a medicaid patient compared to a patient with commerical insurance.  Indeed, in each strata,  medicaid insurance status was associated with reduced odds of receiving antiemetic prophylaxis, suggesting that the association holds accross the board.
