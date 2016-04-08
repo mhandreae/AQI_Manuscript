@@ -1,0 +1,29 @@
+---
+output:
+  word_document:
+    reference_docx: mytables.docx
+---
+
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+***
+
+## Table 6. Bayesian Hierarchical Model {#Bayesian_table}
+
+---
+
+```{r Table6}
+require(knitr)
+load(file = "Results7.0.Rdata")
+kable(results.table, digits = 2)
+```
+
+Table 6 shows the regression coefficients of our Bayesian hierarchical mixed effects model to predict ondansetron administration in the NACOR subset with complete data on  insurance status, antiemetic administration *and* procedure code. Compared to commercial insurance, Medicaid and Medicare patients were less likely to recieve antiemetic prophylaxis with ondansetron (OR 0.85, with Bayesian Credible 95% Intervals 0.8, 0.9) after controlling for age, gender, ASA risk classification, anesthesia type, and practice as fixed effects, allowing providers and procedures a random intercept. As we would expect given the known riks for PONY, woman and younger patients were more likely to recieve prophylaxis. More prophylaxis was administered in cases using general anesthesia. Increasing ASA risk classification was associatated with lower odds of prophylaxis. Differences between institutions were large.
+

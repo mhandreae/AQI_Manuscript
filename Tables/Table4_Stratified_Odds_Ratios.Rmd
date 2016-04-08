@@ -14,7 +14,7 @@ eval_everything=FALSE
 ```
 
 ***
-## Table 4 stratified odds ratios 
+## Table 4. Stratified Odds Ratios 
 
 ---
 

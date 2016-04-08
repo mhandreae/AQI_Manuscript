@@ -1,0 +1,32 @@
+---
+output:
+  word_document:
+    reference_docx: mytables.docx
+---
+
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+***
+
+## Table 5. Logistic Regression {#Logistic_table}
+
+---
+
+```{r,eval=TRUE}
+## Generated in
+## AQI_stata_data_analysis.Rmd
+## C:\Users\Micheal\Dropbox\Professional\AQI\Publish\AQI_Manuscript\Tables
+rm(list=ls())
+require(knitr)
+load("table_my_logistic2.Rdata")
+kable(table_my_logistic2, digit=3, row.names=TRUE)
+```
+
+The results of our classical logistic regression, presented in a table as odds ratios with the coresponding 95% confidence intervals, show that being on medicaid or medicare, compared to having commercial insurance, drastically reduces the odds of receiving ondansetron during anesthesia after controlling for potential confounders like gender, age, case duration (in our NACOR set with complete information on antiemetic use *and* insurance status).
