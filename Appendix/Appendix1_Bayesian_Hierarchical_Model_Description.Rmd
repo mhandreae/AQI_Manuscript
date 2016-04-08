@@ -1,0 +1,34 @@
+---
+output:
+  word_document:
+      reference_docx: myAppendix.docx
+bibliography: AQI_Appendix_bibliography6May2015.bib
+---
+
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+```{r libraries}
+require(knitr)
+```
+
+## Bayesian Model Description
+
+We build hierarchical Bayesian models for the subset with data on medical insurance (short: *insurance*), median income in patient home zip code (short: *income*), respectively. We studied the administration of *only ondansetron*  or of *ondansetron and dexamethason* as primary outcomes.  We included either *insurance* or *income* [devided in quantiles] as ordinal predictors in our models. We controlled for patient characteristics like gender and age. In some models, we included mixed (random) effects to control for the potential confounding influence of procedure type or provider behavior, by allowing each procedure and each provider to have an individual intercept. We present more details on the Bayesian models in the appendix. We relied on Rhat as a convergence diagnostic, after exploring the Monte Carlo Markov Chain output graphically[@brooks1998general].
+
+We build hierarchical Bayesian models for the subset with data on medical insurance (short: *insurance*), median income in patient home zip code (short: *income*), respectively. We studied the administration of *only ondansetron*  or of *ondansetron and dexamethason* as primary outcomes.  We included either *insurance* or *income* [devided in quantiles] as ordinal predictors in our models. We controlled for patient characteristics like gender and age. In some models, we included mixed (random) effects to control for the potential confounding influence of procedure type or provider behavior, by allowing each procedure and each provider to have an individual intercept. We present more formal details on the Bayesian modeling in the appendix. We relied on Rhat as a convergence diagnostic, after exploring the Monte Carlo Markov Chain output graphically[@brooks1998general]. There are no patient identifiers to track repeated anesthetics administered to the same patient. We used the default priors as described in the software package[@rstanarm], i.e. we used uninformative priors for the main effect of insurance status on antiemetic prophylaxis. We performed a sensitivity analysis investigating the appropriateness of our model assumptions. Briefly, we modeled the outcome as a dichtomous event $y$. For each anesthetic case, our unit of analysis, 
+
+$$
+  \begin{aligned} 
+  y &\sim& Bernoulli(\mu)\\
+  \mu &\sim& inverse\_logit(x_{ij} * \beta_j + z_{ij} * b_{ij})))
+   \end{aligned}
+$$
+
+where $\mu$ is the population averaged probability of an event (e.g. ondansetron administration). In the i^th^ anesthetic, $x_{ij}$ is the indicator for the predictor j (e.g. insurance status = medicaid), with $\beta_j$ the coefficient of effect, (e.g. for the contrast between medicaid and commercial insurance or the effect of gender); $z_{ik}$ the indicator for the random effect (e.g. the procedure code or the provider of the i^th^ anesthetic case), $b_k$ is the estimate for the random intercept (the odds of antiemetic utilization for that type of procedure).  There are no patient identifiers to track repeated anesthetics administered to the same patient. We used the default priors as described in the software package[@rstanarm], i.e. we used uninformative priors for the main effect of insurance status on antiemetic prophylaxis. We performed a sensitivity analysis investigating the appropriateness of our model assumptions. 
