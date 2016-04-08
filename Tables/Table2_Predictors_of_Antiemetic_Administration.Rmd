@@ -15,7 +15,7 @@ eval_everything=FALSE
 
 ***
 
-## Table 2. Predictors of antiemetic administration {#Table2}
+## Table 2. Predictors of Antiemetic Administration {#Table2}
 
 ---
 
