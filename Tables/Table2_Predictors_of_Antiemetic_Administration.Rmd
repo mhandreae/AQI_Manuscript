@@ -1,0 +1,36 @@
+---
+output:
+  word_document:
+    reference_docx: mytables.docx
+---
+
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+***
+
+## Table 2. Predictors of antiemetic administration {#Table2}
+
+---
+
+```{r make_first_table1, eval=FALSE}
+Table <- read.csv("C:/Users/Micheal/Dropbox/Professional/AQI/Yeti/AQI Yeti/Table.csv")
+names(Table) <- c("Variable", "Total", "No Ondansetron", 
+               "Ondansetron", "P.value")
+save(Table, file="Table.Rdata")
+```
+
+```{r,eval=TRUE}
+# C:\Users\Michael Andreae\Dropbox\Professional\AQI\Robert\tables for abstract
+library(knitr)
+load("Table.Rdata")
+kable(Table[1:9,1:4], row.names=FALSE)
+```
+
+Table 2 describes the demographic characteristics predicting ondansetron use in the NACOR superset with electronic data on antiemetic administration. There seems to be a slight preponderance of ondansetron use in female patients, (who are at higher risk for postoperative nausea and vomiting) and in patients living in a zip code with a higher median income. 
