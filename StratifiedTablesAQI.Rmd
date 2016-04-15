@@ -1,13 +1,12 @@
 ---
-title: "Supplemental Tables of NACOR data"
 output:
   word_document:
     reference_docx: mystyleSupplementalTablesAQI.docx
 ---
 
-We detail the population characteristcs and stratified analysis of the NACOR dataset in the Public Use File of the Anestehsia Quality Institute with electronic anesthesia records recording antiemetic use.
+# Table 2 Stratified Analysis
 
-
+---
 
 ```{r, packages, message=FALSE, echo=FALSE, warning=FALSE}
 library(knitr) # required to set options in Markdown R
@@ -67,7 +66,6 @@ levels(fullAQI_4_14$age_group)
 
 # Table 1
 
-## Table of gender
 ```{r table1_gender}
 table1.2 <- ddply(fullAQI_4_14, 
                     c("sex"), summarise,
@@ -86,7 +84,6 @@ kable(table1.2, col.names = c("Gender",
       digits = 2)
 ```
 
-## Table of age group
 
 ```{r table1_age_group}
 
@@ -98,7 +95,7 @@ table1.3 <- ddply(fullAQI_4_14,
                     p_Antiemetic = sum(ond=="Ondan")/length(ond),
                     odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
                     )
-kable(table1.3, col.names = c("Age Group",
+kable(table1.3, col.names = c("Age",
                               "Cases",
                               "% Population",
                               "Ondansetron",
@@ -106,8 +103,6 @@ kable(table1.3, col.names = c("Age Group",
                               "Odds for Ondansetron"), 
       digits = 2)
 ```
-
-## Table of anesthesia type
 
 ```{r table1_anes_type}
 table1.4 <- ddply(fullAQI_4_14, 
@@ -118,7 +113,7 @@ table1.4 <- ddply(fullAQI_4_14,
                     p_Antiemetic = sum(ond=="Ondan")/length(ond),
                     odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
                     )
-kable(table1.4, col.names = c("Anesthesia Typ",
+kable(table1.4, col.names = c("Anesthetic",
                               "Cases",
                               "% Population",
                               "Ondansetron",
@@ -127,7 +122,6 @@ kable(table1.4, col.names = c("Anesthesia Typ",
       digits = 2)
 ```
 
-## Table of ASA status
 
 ```{r table1_ASA}
 table1.5 <- ddply(fullAQI_4_14, 
@@ -138,7 +132,7 @@ table1.5 <- ddply(fullAQI_4_14,
                     p_Antiemetic = sum(ond=="Ondan")/length(ond),
                     odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
                     )
-kable(table1.5, col.names = c("ASA Status",
+kable(table1.5, col.names = c("ASA class",
                               "Cases",
                               "% Population",
                               "Ondansetron",
@@ -147,8 +141,6 @@ kable(table1.5, col.names = c("ASA Status",
       digits = 2)
 ```
 
-
-## Table of insurance status
 
 ```{r table1_pay}
 table1.6 <- ddply(fullAQI_4_14, 
@@ -159,7 +151,7 @@ table1.6 <- ddply(fullAQI_4_14,
                     p_Antiemetic = sum(ond=="Ondan")/length(ond),
                     odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
                     )
-kable(table1.6, col.names = c("Insurance Typ",
+kable(table1.6, col.names = c("Insurance",
                               "Cases",
                               "% Population",
                               "Ondansetron",

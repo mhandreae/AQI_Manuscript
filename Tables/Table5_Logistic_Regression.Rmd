@@ -13,7 +13,6 @@ opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
 eval_everything=FALSE
 ```
 
-***
 
 ## Table 5. Logistic Regression {#Logistic_table}
 
@@ -27,6 +26,7 @@ rm(list=ls())
 require(knitr)
 load("table_my_logistic2.Rdata")
 kable(table_my_logistic2, digit=3, row.names=TRUE)
+# n is number of complete cases in this data set
 ```
 
-The results of our classical logistic regression, presented in a table as odds ratios with the coresponding 95% confidence intervals, show that being on medicaid or medicare, compared to having commercial insurance, drastically reduces the odds of receiving ondansetron during anesthesia after controlling for potential confounders like gender, age, case duration (in our NACOR set with complete information on antiemetic use *and* insurance status).
+Table 3 presents the results of our classical logistic regression, with OR (odds ratios with the coresponding 95% confidence intervals), indicating that  medicaid or medicare (compared to commercially insured) patients, are less likely to receive ondansetron as antiemetic prophylaxis after controlling for potential confounders (gender, age, median income in patients' home zip code, case duration) in this NACOR data set with complete information on antiemetic use, insurance status *and* additional predictors (n = 115750, p<0.01).
