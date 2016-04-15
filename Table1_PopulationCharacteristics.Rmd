@@ -159,4 +159,4 @@ kable(table1.6, col.names = c("Insurance",
       digits = 2)
 ```
 
-Table 1 details the population characteristcs and ondansetron utilization in the NACOR dataset (n_{cases} = `r dim(myAQI_cpt)[1]`) in  the Public Use File of the Anesthesia Quality Institute, enriched with antiemetic utilization and insurance provider information.
+Table 1 details the population characteristcs and ondansetron utilization in the NACOR dataset (n = `r dim(myAQI_cpt)[1]`) in  the Public Use File of the Anesthesia Quality Institute, enriched with antiemetic utilization and insurance provider information.
