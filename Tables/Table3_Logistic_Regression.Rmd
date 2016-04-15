@@ -1,0 +1,32 @@
+---
+output:
+  word_document:
+    reference_docx: mytables.docx
+---
+
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+
+## Table 5. Logistic Regression {#Logistic_table}
+
+---
+
+```{r,eval=TRUE}
+## Generated in
+## AQI_stata_data_analysis.Rmd
+## C:\Users\Micheal\Dropbox\Professional\AQI\Publish\AQI_Manuscript\Tables
+rm(list=ls())
+require(knitr)
+load("table_my_logistic2.Rdata")
+kable(table_my_logistic2, digit=3, row.names=TRUE)
+# n is number of complete cases in this data set
+```
+
+Table 3 presents the results of our classical logistic regression, with OR (odds ratios with the coresponding 95% confidence intervals), indicating that  medicaid or medicare (compared to commercially insured) patients, are less likely to receive ondansetron as antiemetic prophylaxis after controlling for potential confounders (gender, age, median income in patients' home zip code, case duration) in this NACOR data set with complete information on antiemetic use, insurance status *and* additional predictors (n = 115750, p<0.01).
