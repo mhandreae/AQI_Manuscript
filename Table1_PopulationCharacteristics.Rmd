@@ -1,0 +1,162 @@
+---
+output:
+  word_document:
+    reference_docx: mystyleSupplementalTablesAQI.docx
+---
+
+# Table 1: Population Characteristics
+
+---
+
+```{r, packages, message=FALSE, echo=FALSE, warning=FALSE}
+library(knitr) # required to set options in Markdown R
+library(dplyr)
+library(plyr)
+# library(ResourceSelection)
+# library(lme4)
+# library(nlme)
+```
+
+
+
+```{r, global_options, echo=FALSE}
+
+# set the directory to the project directory
+#setwd("C:/Users/Micheal/Dropbox/Professional/AQI/AQI_Random_Effects_Stan/AQI_Analysis")
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+rm(list = ls())
+showall<-FALSE
+```
+
+
+```{r load_clean_dataset, echo=showall}
+
+
+## Load cleaned dataset *myAQI_cpt* and *prov1_AQI_4_14*
+load("Data/ManuscriptData15Apr16.Rdata")
+
+# we load the cleaned larger dataset without and with provider information *myAQI_cpt.Rdata*, *prov1_AQI_4_14*, which we generated in *import_AQI_14Jul2015.Rmd*   
+
+#load("Analysis/Data/myAQI_cpt.Rdata")
+#load("Analysis/Data/prov1_AQI_4_14.Rdata")
+```
+
+```{r show_data_structure, eval=showall}
+str(myAQI_cpt)
+str(prov1_AQI_4_14)
+```
+
+
+```{r reorder_level_age_group, echo=showall, results='hide'}
+## Reorder age_group for tables
+
+levels(myAQI_cpt$age_group)
+myAQI_cpt$age_group <- factor(myAQI_cpt$age_group, 
+                                 levels =  c("Under 1",
+                                             "1-18",
+                                             "19 - 49", 
+                                             "50 - 64", 
+                                             "65 - 79",
+                                             "80+"
+                                              ))
+levels(myAQI_cpt$age_group)
+```
+
+
+```{r table1_gender}
+table1.2 <- ddply(myAQI_cpt, 
+                    c("sex"), summarise,
+                    N = length(ond),
+                    Percent_n= N/dim(myAQI_cpt)[1],
+                    Ond = sum(ond=="Ondan"),
+                    p_Antiemetic = sum(ond=="Ondan")/length(ond),
+                    odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
+                    )
+kable(table1.2, col.names = c("Gender",
+                              "Cases",
+                              "% Cases",
+                              "Ondansetron",
+                              "% ",
+                              "Odds for Ondansetron"), 
+      digits = 2)
+```
+
+
+```{r table1_age_group}
+
+table1.3 <- ddply(myAQI_cpt, 
+                    c("age_group"), summarise,
+                    N = length(ond),
+                    Percent_n= N/dim(myAQI_cpt)[1],
+                    Ond = sum(ond=="Ondan"),
+                    p_Antiemetic = sum(ond=="Ondan")/length(ond),
+                    odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
+                    )
+kable(table1.3, col.names = c("Age",
+                              "Cases",
+                              "% Cases",
+                              "Ondansetron",
+                              "% ",
+                              "Odds for Ondansetron"), 
+      digits = 2)
+```
+
+```{r table1_anes_type}
+table1.4 <- ddply(myAQI_cpt, 
+                    c("anes_type"), summarise,
+                    N = length(ond),
+                    Percent_n= N/dim(myAQI_cpt)[1],
+                    Ond = sum(ond=="Ondan"),
+                    p_Antiemetic = sum(ond=="Ondan")/length(ond),
+                    odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
+                    )
+kable(table1.4, col.names = c("Anesthetic",
+                              "Cases",
+                              "% Cases",
+                              "Ondansetron",
+                              "% ",
+                              "Odds for Ondansetron"), 
+      digits = 2)
+```
+
+
+```{r table1_ASA}
+table1.5 <- ddply(myAQI_cpt, 
+                    c("ASA"), summarise,
+                    N = length(ond),
+                    Percent_n= N/dim(myAQI_cpt)[1],
+                    Ond = sum(ond=="Ondan"),
+                    p_Antiemetic = sum(ond=="Ondan")/length(ond),
+                    odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
+                    )
+kable(table1.5, col.names = c("ASA class",
+                              "Cases",
+                              "% Cases",
+                              "Ondansetron",
+                              "% ",
+                              "Odds for Ondansetron"), 
+      digits = 2)
+```
+
+
+```{r table1_pay}
+table1.6 <- ddply(myAQI_cpt, 
+                    c("pay"), summarise,
+                    N = length(ond),
+                    Percent_n= N/dim(myAQI_cpt)[1],
+                    Ond = sum(ond=="Ondan"),
+                    p_Antiemetic = sum(ond=="Ondan")/length(ond),
+                    odds_Antiemetic = sum(ond=="Ondan")/sum(ond=="no Ondan")
+                    )
+kable(table1.6, col.names = c("Insurance",
+                              "Cases",
+                              "% Cases",
+                              "Ondansetron",
+                              "% utilized",
+                              "Odds for Ondansetron"), 
+      digits = 2)
+```
+
+Table 1 details the population characteristcs and ondansetron utilization in the NACOR dataset (n_{cases} = `r dim(myAQI_cpt)[1]`) in  the Public Use File of the Anesthesia Quality Institute, enriched with antiemetic utilization and insurance provider information.
