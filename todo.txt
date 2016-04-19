@@ -1,4 +1,5 @@
 identify the data files
 make tables
 number tables
+insert n for each table and in flow diagram
 correct text
