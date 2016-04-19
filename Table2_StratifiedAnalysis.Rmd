@@ -4,7 +4,7 @@ output:
     reference_docx: mystyleSupplementalTablesAQI.docx
 ---
 
-# Table 2 Stratified Analysis of Ondansetron Utilization
+# Table 2 Stratified Analysis of Ondansetron Utilization by Insurance
 
 ---
 
@@ -243,4 +243,4 @@ kable(tableOR2.3, col.names = c("Insurance",
       digits = 2, caption = "Stratified by anes_type/MAC")
 ```
 
-Table 2 shows the stratified analysis (by gender and anesthesia type), where OR*, (the odds ratio of ondansetron utlization), favors commerical insurance over medicaid and medicare in all strata in this NACOR dataset (n = `r dim(fullAQI_4_14)[1]`) with complete information on insurance **and** antiemetic utilization (p<0.01).
+Table 2: The stratified analysis of ondansetron utilization by insurance is exemplified by gender and anesthesia type, where OR*, (the odds ratio of ondansetron utlization), favors commerical insurance over medicaid and medicare in all strata in this NACOR dataset (n = `r dim(fullAQI_4_14)[1]`) with complete information on insurance **and** antiemetic utilization (p<0.01).
