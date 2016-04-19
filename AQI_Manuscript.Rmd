@@ -86,7 +86,7 @@ Our hypothesis is that socioeconomic patient characteristics will predict antiem
 \newpage
 
 # Methods
-We obtained the Public User File (PUF) of the National Anesthesia Clinical Outcomes Registry (NACOR), from Quarter 4 of 2013, provided and enriched with additional information on antiemetic usage and insurance status by the Anesthesia Quality Institute (AQI) based on the uploaded electronic medical records. AQI had removed all patient identifiers.
+We pre-specified our hypothesis and our analysis methods in the fall of 2013, prior to obtaining the data (accessible in an unpublished manuscript in the appendix online), submitted as a graduate course paper. We obtained the Public User File (PUF) of the National Anesthesia Clinical Outcomes Registry (NACOR), from Quarter 4 of 2013, provided and enriched with additional information on antiemetic usage and insurance status by the Anesthesia Quality Institute (AQI) based on the uploaded electronic medical records. AQI had removed all patient identifiers.
 
 The Albert Einstein College of Medicine Institutional Review Board determined that in accordance with the OHRP Guidance on Research Involving Coded Private Information or Biological Specimens, our study does not meet the definition of human subject research as defined by 45 CFR 46.102(f), as the data/specimens were not collected specifically for the proposed research project and are completely de-identified.
 
