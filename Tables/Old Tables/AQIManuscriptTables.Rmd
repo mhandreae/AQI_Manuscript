@@ -1,0 +1,121 @@
+---
+title: "AQI_ManuscriptTables"
+author: "Michael Andreae"
+date: "December 3, 2015"
+output: pdf_document
+---
+
+```{r, global_options, echo=FALSE}
+suppressWarnings(library(knitr))
+# set options
+opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+               echo=FALSE, warning=FALSE, message=FALSE)
+eval_everything=FALSE
+```
+
+# Prepare
+
+## Load Data to produce table
+
+Load the complete case dataset produced with AQI_Import  on 3Dec2015 once from the source data file and save it in */Data* and clean workspace.
+
+```{r, importData, eval=FALSE}
+load("C:/Users/Micheal/Dropbox/Professional/AQI/AQI_Import/myAQI_cpt.Rdata")
+save(ccAQI_cpt, myAQI_cpt, 
+     file = "Data/ManuscriptData3Dec2015.Rdata")
+rm(list=ls())
+```
+
+```{r, Libraries}
+library(knitr)
+library(dplyr)
+```
+
+```{r, loadData}
+#load("Data/ManuscriptData3Dec2015.Rdata")
+load("C:/Users/Micheal/Dropbox/Professional/AQI/Publish/AQI_Manuscript/Data/ManuscriptData15Apr16.Rdata")
+str(ccAQI_cpt)
+```
+
+# Build Tables
+
+\newpage
+
+## Table 1 Population characteristics
+
+
+```{r, Table1}
+attach(myAQI_cpt)
+
+Variables <- c("n",               # all
+               levels(sex), # gender
+               "median [IQR]",
+               levels(age_group), 
+               levels(pay),
+                "median [IQR]",levels(incomeQ))
+
+
+Total <- as.integer(c(dim(myAQI_cpt)[1], 
+           table(sex),
+           median(age, na.rm=TRUE),
+           table(age_group),
+           table(pay),
+           median(income, na.rm = TRUE)*100000,
+           table(incomeQ)
+           ))
+
+Groups <- c(
+  c("Population", "Gender", ""),
+  c("Age", rep("",6)),
+  c("Insurance", rep("",3)),
+  c("Income ($)", "-quartiles", rep("",3))
+            )
+
+Table1 <- data.frame(Groups=Groups, Variables=Variables, Total=Total)
+
+kable(Table1)
+save(Table1, file="Tables/Table1")
+```
+
+Table 1 Population characteristics describes the subpopulation in the NACOR database with information on antiemetic administration. We found statistically significant differences (p<0.001) in all comparisons (age, gender, income in the patients zip code and case characteristics like outpatient procedure, emergency procedure and case duration.
+
+### Table by hand
+
+|     |      |   |
+|-----|------|---|
+| all | 3442 |   |
+| age | 4556 |   |
+
+|     |      |   |
+|-----|------|---|
+|Population | n | 441645 |
+|------------------|
+|Gender | female | 249909 |
+| | male | 191654 |
+||||
+| Age | median | `r median(age, na.rm=TRUE)` |
+
+
+```{r}
+
+medInc <- median(myAQI_cpt$age, na.rm=TRUE)
+```
+
+
+\newpage 
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+`r median(myAQI_cpt$age, na.rm=TRUE)`     12        12            `r median(myAQI_cpt$age, na.rm=TRUE)`
+    123     123       123          123
+      1     1          1             1
+
+Table:  Demonstration of simple table syntax.
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+     12     12        12            12
+    123     123       123          123
+      1     1          1             1
+
+Table:  Demonstration of simple table syntax.
