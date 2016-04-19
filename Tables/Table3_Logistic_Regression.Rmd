@@ -14,7 +14,7 @@ eval_everything=FALSE
 ```
 
 
-## Table 5. Logistic Regression {#Logistic_table}
+## Table 3. Logistic Regression {#Logistic_table}
 
 ---
 
