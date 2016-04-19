@@ -14,11 +14,11 @@ bibliography: Bibliography/AQI_bibliography6May2015.bib
 
 ##### Authors
 
-Michael H. Andreae, MD, Department of Anesthesiology, Montefiore Medical Center, Albert Einstein College of Medicine, Bronx, NY
+Michael H. Andreae, M.D., Department of Anesthesiology, Montefiore Medical Center, Albert Einstein College of Medicine, Bronx, NY
 
-Jonah S. Galbry, MSc, Department of Statistics, Columbia University, New York, NY
+Jonah S. Gabry, M.A., Department of Statistics, Columbia University, New York, NY
 
-Robert S White, MD, Department of Anesthesiology, Weill Cornell Medical Center, New York, NY
+Robert S White, M.D., Department of Anesthesiology, Weill Cornell Medical Center, New York, NY
 
 Charles Hall, PhD, Department of Epidemiology & Population Health, Albert Einstein College of Medicine, Bronx, NY
 
