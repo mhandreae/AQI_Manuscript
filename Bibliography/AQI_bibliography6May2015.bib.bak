@@ -1,5 +1,4 @@
-% This file was created with JabRef 2.10.
-% Encoding: UTF8
+% Encoding: UTF-8
 
 
 @Article{Alavi_22125173,
@@ -89,6 +88,18 @@
   Pmid                     = {2909878},
   Timestamp                = {2015.05.07},
   Url                      = {http://dx.doi.org/10.1056/NEJM198901053200110}
+}
+
+@Article{brooks1998general,
+  Title                    = {General methods for monitoring convergence of iterative simulations},
+  Author                   = {Brooks, Stephen P and Gelman, Andrew},
+  Journal                  = {Journal of computational and graphical statistics},
+  Year                     = {1998},
+  Number                   = {4},
+  Pages                    = {434--455},
+  Volume                   = {7},
+
+  Publisher                = {Taylor \& Francis}
 }
 
 @Article{Campbell_19183526,
@@ -1097,3 +1108,14 @@
   Url                      = {http://dx.doi.org/10.1213/ANE.0b013e318239dc7c}
 }
 
+@Article{,
+}
+
+@Article{Andreae_Pain_Med_inpress,
+  author  = {Andreae, Michael and White, Robert and Chen, Kelly and Nair, Singh and Hall, Charles and Shaparin, Naum},
+  title   = {The effect of initiatives to overcome language barriers and improve attendance: a retrospective inner city pain clinic cross-sectional analysis},
+  journal = {Pain Med},
+  year    = {2016},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
