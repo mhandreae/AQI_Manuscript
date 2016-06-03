@@ -70,12 +70,13 @@ Do healthcare disparities exist also in anesthesia? A systematic review and meta
 
 ## Objective
 
-We propose to investigate antiemetic utilization as a marker of quality anesthesia care and health care disparity. Three characteristics make antiemetic utilization a good marker as 
+We propose to investigate antiemetic utilization as a marker of quality anesthesia care and health care disparity. Patients perceive Postoperative nausea and vomiting (PONV) is an important outcome [@Wender2009]. Previous research showed remarkable variability between providers in antiemetic utlization, possibly due to gaps in knowledge, provider perceptions of importance of PONV as an outcome for the patient at hand, leading to unterutlization of proven therapies[@MacarioChungWeinger2001]. Several characteristics make antiemetic utilization a good marker as 
 
-1. antiemetic utilization is relatively independent of patient characteristics, 
-2. antiemetic utilization is the sole responsibility of anesthesia providers,
-3. antiemetic utilization is not influenced by regulatory or insurance constraints and 
-4. antiemetic utilization has a an accepted standard of care [@Apfel_15190136].
+1. antiemetic utilization is relatively independent of patient co-morbidities, 
+2. antiemetic utilization is the sole responsibility of anesthesia providers [@MacarioChungWeinger2001],
+3. antiemetic utilization is not (yet) influenced by regulatory or insurance constraints,
+4. antiemetic utilization clearly improves outcomes, which matter to patients[@Wender2009; @Apfel_15190136], and
+4. antiemetic utilization is an accepted standard of care with explicit guidelines [@Apfel_15190136; @GanDiemunschHabibEtAl2014].
 
 This paper investigates if antiemetic utilization is predicted by socioeconomic status. We explore the association of the two predictors insurance status and median income in the patients' home zip code with antiemetic utilization of ondansetron and/or dexamethason in the subset of the National Anesthesia Clinical Outcomes Registry (NACOR) with full electronic anesthesia records [@Dutton_21871404].
 
@@ -170,7 +171,7 @@ The strong and statistically significant association between insurance status an
 
 In our enriched National Anesthesia Clinical Outcomes Registry dataset, we found a clinically important and strong statistical association between socioeconomic status (insurance status or median income in home zip code) and the utilization of antiemetic medication (ondansetron and/or dexamethason). Bivariate analysis, stratified analysis, multivariate logistic regression and Bayesian hierarchical modelling all showed the same strong and statistically significant association; for Medicaid versus commercially insured patients, the odds ratio of receiving the antiemetic ondansetron is 0.85 in our Bayesian hierarchical mixed regression model, with a 95% Bayesian credible interval of [0.81, 0.89] with similar inferences in classical regression models and predictors and outcomes. 
 
-Given that antiemetic administration is the sole domain of the individual anesthesia providers, our results point to possible, unappreciated and worrisome healthcare disparities in anesthesia [@Cook_22353147, @Silber_23719571]. The size of the datsets in NACOR we studied likely makes this the largest study of healthcare disparities in anesthesia undertaken to date. This increased our power to detect an association between insurance status and antiemetic prophylaxis. Controlling for likely confounders decreases the chance that the association is spurious. Demonstrating health care disparities for which only anesthesiologists are accountable, in such a large dataset is novel. The fact that antiemetic administration, (as a marker of anesthesia quality) is exclusively in the domain of the anesthesiologist will likely make a greater impression on the anesthesia community than an intervention, marker or decision in which anesthesiologists are only marginally involved (like procedure time [@Silber_23719571]) or where anesthesiologists are not the sole decision maker [@Tighe2012].
+The authors believe that socioeconomic status or payer should NOT influence PONV prophylaxis [@Right_to_Health_Lancet2015]. Given that antiemetic administration is the sole domain of the individual anesthesia providers, our results point to possible, unappreciated and worrisome healthcare disparities in anesthesia [@Cook_22353147, @Silber_23719571]. The size of the datsets in NACOR we studied likely makes this the largest study of healthcare disparities in anesthesia undertaken to date. This increased our power to detect an association between insurance status and antiemetic prophylaxis. Controlling for likely confounders decreases the chance that the association is spurious. Demonstrating health care disparities for which only anesthesiologists are accountable, in such a large dataset is novel. The fact that antiemetic administration, (as a marker of anesthesia quality) is exclusively in the domain of the anesthesiologist will likely make a greater impression on the anesthesia community than an intervention, marker or decision in which anesthesiologists are only marginally involved (like procedure time [@Silber_23719571]) or where anesthesiologists are not the sole decision maker [@Tighe2012].
 
 ### External and internal validity of our findings 
 
