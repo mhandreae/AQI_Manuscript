@@ -1277,4 +1277,21 @@
   pmid        = {24356162},
 }
 
+@Article{Right_to_Health_Lancet2015,
+  title       = {Remembering the right to health.},
+  journal     = {Lancet},
+  year        = {2015},
+  volume      = {386},
+  number      = {10011},
+  pages       = {2366},
+  month       = {Dec},
+  doi         = {10.1016/S0140-6736(15)01230-1},
+  keywords    = {Health Equity, ethics; Health Status; Humans; Patient Rights},
+  language    = {eng},
+  medline-pst = {ppublish},
+  pii         = {S0140-6736(15)01230-1},
+  pmid        = {26700513},
+  url         = {http://dx.doi.org/10.1016/S0140-6736(15)01230-1},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
