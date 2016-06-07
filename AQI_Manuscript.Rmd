@@ -5,9 +5,10 @@ title: \normalsize Utilization of Antiemetic Medication as a Marker of Healthcar
 csl: Bibliography/anesthesia-and-analgesia.csl
 fontfamily: pslatex
 output:
+  pdf_document: default
+  html_document: default
   word_document:
     reference_docx: mystyles.docx
-  pdf_document: default
 bibliography: Bibliography/AQI_bibliography31May2016.bib
 ---
 \setlength{\parindent}{0ex}
@@ -17,6 +18,8 @@ bibliography: Bibliography/AQI_bibliography31May2016.bib
 Michael H. Andreae, M.D., Department of Anesthesiology, Montefiore Medical Center, Albert Einstein College of Medicine, Bronx, NY
 
 Jonah S. Gabry, M.A., Department of Statistics, Columbia University, New York, NY
+
+Ben Goodrich, PhD., Department of Political Science, Columbia University, New York, NY
 
 Robert S White, M.D., Department of Anesthesiology, Weill Cornell Medical Center, New York, NY
 
