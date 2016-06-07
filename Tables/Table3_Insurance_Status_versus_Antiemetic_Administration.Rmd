@@ -15,7 +15,7 @@ eval_everything=FALSE
 
 ***
 
-## Table 3. Insurance Status Versus Antiemetic Prophylaxis {#Table3}
+## Table 3. Insurance Status versus Antiemetic Prophylaxis {#Table3}
 
 ---
 
@@ -25,4 +25,4 @@ load("Table.Rdata")
 kable(Table[10:14,1:4], row.names=FALSE)
 ```
 
-Table 3 describes the association of insurance status with antiemetic adminstration in the NACOR case subset with data on 176334 anesthetic cases antiemetic adminstration *and* insurance status. Clearly  patients  with commercial insurance are more likely to receive antiemetic prophylaxis than those who are insured through medicaid or medicare. (This association was statistically highly significant in a Chi-square analysis with a p value < 0.001, in brackets the insurances in percent of the cases with and without ondansetron use.)
+Table 3 describes the association of insurance status with antiemetic Utilization in the NACOR case subset with data on 176334 anesthetic cases antiemetic Utilization *and* insurance status. Clearly  patients  with commercial insurance are more likely to receive antiemetic prophylaxis than those who are insured through medicaid or medicare. (This association was statistically highly significant in a Chi-square analysis with a p value < 0.001, in brackets the insurances in percent of the cases with and without ondansetron use.)

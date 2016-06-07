@@ -15,7 +15,7 @@ eval_everything=FALSE
 
 ***
 
-## Table 2. Predictors of Antiemetic Administration {#Table2}
+## Table 2. Demographic Characteristics Associated with Antiemetic Utilization {#Table2}
 
 ---
 
@@ -33,4 +33,4 @@ load("Table.Rdata")
 kable(Table[1:9,1:4], row.names=FALSE)
 ```
 
-Table 2 describes the demographic characteristics predicting ondansetron use in the NACOR superset with electronic data on antiemetic administration. There seems to be a slight preponderance of ondansetron use in female patients, (who are at higher risk for postoperative nausea and vomiting) and in patients living in a zip code with a higher median income. 
+Table 2 describes the demographic characteristics associated with ondansetron use in the NACOR superset with electronic data on antiemetic utlization There seems to be a slight preponderance of ondansetron use in female patients, (who are at higher risk for postoperative nausea and vomiting) and in patients living in a zip code with a higher median income. 
