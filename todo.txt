@@ -1,3 +1,9 @@
+Appendix 1 (reviewer 1)
+show one Bayesian model
+describe priors explictly
+
+
+
 identify the data files
 make tables
 number tables
