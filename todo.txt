@@ -2,6 +2,8 @@ Appendix 1 (reviewer 1)
 show one Bayesian model
 describe priors explictly
 
+Supplemental TAble comparing datasets
+
 
 
 identify the data files
